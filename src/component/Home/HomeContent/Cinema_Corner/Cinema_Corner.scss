@@ -1,0 +1,156 @@
+.cinema-corner-container {
+  margin-bottom: 30px;
+  padding: 0 120px;
+  .title-corner-cinema {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+
+    .title {
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .review-movie {
+      position: relative; // thanh gạch chân
+      cursor: pointer;
+      font-size: 20px;
+      color: rgb(156, 154, 154);
+
+      &.active {
+        color: #0d6efd;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 33%;
+          width: 30%; /* Độ dài thanh gạch chân */
+          height: 2px; /* Độ dày thanh gạch chân */
+          background-color: #0d6efd; /* Màu sắc của thanh gạch chân */
+        }
+      }
+    }
+    .blog-movie {
+      position: relative; // thanh gạch chân
+      cursor: pointer;
+      font-size: 20px;
+      color: rgb(156, 154, 154);
+
+      &.active {
+        color: #0d6efd;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 36%;
+          width: 30%; /* Độ dài thanh gạch chân */
+          height: 2px; /* Độ dày thanh gạch chân */
+          background-color: #0d6efd; /* Màu sắc của thanh gạch chân */
+        }
+      }
+    }
+  }
+
+  .content-corner-cinema {
+    .left {
+      text-align: left; // ghi đè lên css của container
+    }
+    .right {
+    }
+  }
+
+  .see-more {
+    border: 1px solid rgb(242, 107, 56);
+    border-radius: 5px;
+    margin-top: 30px;
+    color: rgb(242, 107, 56);
+
+    &:after {
+      margin-left: 10px;
+      // search: css content icon
+      font-family: "FontAwesome";
+      content: "\f105"; // mã unicode của icon
+    }
+  }
+}
+
+.review-container {
+  .img-review {
+    .img {
+      height: 400px;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url("../../../../../public/movie/conan-movie-27.png");
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+
+      &.right-location {
+        height: 130px;
+        width: 195px;
+        margin-bottom: 10px;
+        margin-right: 20px;
+      }
+    }
+  }
+  .title-review {
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        color: rgb(92, 92, 234);
+      }
+    }
+  }
+
+  &.right-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.blog-container {
+  .img-blog {
+    .img {
+      height: 400px;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url("../../../../../public/movie/fly-me-to-the-moon-2048_1722487482742.jpg");
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+
+      &.right-location {
+        height: 130px;
+        width: 195px;
+        margin-bottom: 10px;
+        margin-right: 20px;
+      }
+    }
+  }
+  .title-blog {
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        color: rgb(92, 92, 234);
+      }
+    }
+  }
+
+  &.right-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

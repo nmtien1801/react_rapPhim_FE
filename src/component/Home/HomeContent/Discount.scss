@@ -1,0 +1,104 @@
+.discount-container {
+  margin-bottom: 60px;
+  padding: 0 120px;
+  .title {
+    text-align: left; // ghi đè lên css của container
+    margin-left: 20px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .session-discount-list {
+    .customize-img-slider {
+      .bg-img {
+        height: 213px;
+        width: 379px;
+        transform: translateX(25px); /* Căn giữa theo chiều ngang */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../../../../public/movie/km-m-2.webp");
+        cursor: pointer;
+      }
+
+      @media (max-width: 1024px) {
+        .bg-img {
+          height: 100px;
+          width: 185px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .bg-img {
+          height: 80px;
+          width: 105px;
+        }
+      }
+
+      @media (max-width: 425px) {
+        .bg-img {
+          height: 60px;
+          width: 85px;
+        }
+      }
+    }
+  }
+
+  .all-discount {
+    border: 1px solid rgb(242, 107, 56);
+    border-radius: 5px;
+    margin-top: 80px;
+    color: rgb(242, 107, 56);
+  }
+}
+
+// ghi đè lên css của slick
+.slick-prev {
+  // position: relative !important;
+  left: -18px !important;
+  z-index: 1000;
+  height: 48px !important;
+  width: 44px !important;
+  background: green !important;
+  border: 2px solid #d7d7d7 !important;
+
+  &:hover {
+    background: #d7d7d7 !important;
+  }
+
+  &:before {
+    // search: css content icon
+    font-family: "FontAwesome";
+    content: "\f104"; // mã unicode của icon
+  }
+}
+
+.slick-next {
+  right: -15px !important;
+  z-index: 1000;
+  height: 48px !important;
+  width: 44px !important;
+  background: red !important;
+  border: 2px solid #d7d7d7 !important;
+
+  &:hover {
+    background: #d7d7d7 !important;
+  }
+
+  &:before {
+    font-family: "FontAwesome";
+    content: "\f105"; // mã unicode của icon
+  }
+}
+
+// bể layout slider hàng dọc
+.slider-all .slick-track {
+  display: flex !important; /* Đảm bảo rằng flex không bị ghi đè bởi thuộc tính flex-direction: column; */
+  flex-direction: row; /* Đặt hướng theo hàng ngang */
+}
+
+.slick-slide {
+  float: left; /* Đảm bảo rằng các slide không bị ảnh hưởng bởi các thuộc tính khác */
+  display: block;
+}

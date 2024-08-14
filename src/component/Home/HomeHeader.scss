@@ -1,0 +1,340 @@
+.home-header-container {
+  .up {
+    padding: 10px 120px;
+    margin-bottom: 20px;
+    background-color: white;
+
+    .intro-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #d7d7d7;
+      height: 100px;
+
+      .logo-header {
+        height: 100%;
+        width: 100px;
+        // logo
+        background-image: url("../../../public/logo192.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+
+      .booking {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        .booking-ticket {
+          padding: 10px;
+          background-color: #f3ea28;
+          color: white;
+          border-radius: 5px;
+          font-weight: 600;
+          font-size: 14px;
+          cursor: pointer;
+        }
+        .booking-food {
+          padding: 10px;
+          margin-left: 10px;
+          color: white;
+          background-color: #639;
+          border-radius: 5px;
+          font-weight: 600;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+
+      .login-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .search {
+          border: 1px solid black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 469px;
+          border-radius: 30px;
+          background-color: white;
+          i {
+            cursor: pointer;
+            &:hover {
+              color: rgb(242 107 56);
+            }
+          }
+          input {
+            height: 40px;
+            width: 350px;
+            border: none;
+            background: transparent; // set thẻ input cùng với div (tràn màu)
+            outline: none; // gõ chữ kh hiện khung nữa
+          }
+        }
+
+        /* ẩn input search khi màn hình nhỏ */
+        @media (max-width: 1290px) {
+          .search {
+            width: 40px;
+            border: none;
+            input {
+              display: none !important; /* Ẩn khi màn hình nhỏ hơn 1290px */
+            }
+          }
+        }
+
+        .login {
+          cursor: pointer;
+          &:hover {
+            color: rgb(242 107 56);
+          }
+        }
+        .language {
+          display: flex;
+
+          .language-vi {
+            cursor: pointer;
+            margin: 0 5px;
+            opacity: 0.2;
+            &.active {
+              opacity: 1;
+              span {
+                color: rgb(242 107 56);
+              }
+            }
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+
+          .language-en {
+            cursor: pointer;
+            opacity: 0.2;
+            &.active {
+              opacity: 1;
+              span {
+                color: blue;
+              }
+            }
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+
+    .option-header {
+      .option-app-location {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 30px;
+        .choose-location {
+          cursor: pointer;
+          &:hover {
+            color: rgb(242 107 56);
+          }
+        }
+
+        .choose-time {
+          cursor: pointer;
+          &:hover {
+            color: rgb(242 107 56);
+          }
+        }
+      }
+
+      .option-app-menu {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        gap: 30px;
+
+        .buy-ticket {
+          cursor: pointer;
+          &:hover {
+            color: rgb(242 107 56);
+          }
+        }
+        .movie {
+          cursor: pointer;
+          &:hover {
+            color: rgb(242 107 56);
+          }
+        }
+        .cinema-corner {
+          cursor: pointer;
+          &:hover {
+            color: rgb(242 107 56);
+          }
+        }
+        .event {
+          cursor: pointer;
+          &:hover {
+            color: rgb(242 107 56);
+          }
+        }
+        .Theaters-ticketPrices {
+          cursor: pointer;
+          &:hover {
+            color: rgb(242 107 56);
+          }
+        }
+      }
+    }
+  }
+
+  // ẩn option-header khi màn hình nhỏ
+  @media (max-width: 1290px) {
+    .option-header {
+      display: none !important; /* Ẩn khi màn hình nhỏ hơn 1290px */
+    }
+  }
+
+  .down {
+    margin-bottom: 30px;
+    .slider-all {
+      .customize-img-slider-header {
+        .bg-img {
+          height: 362px;
+          width: 1136px;
+          transform: translateX(25px); /* Căn giữa theo chiều ngang */
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-image: url("../../../public/movie/handsome-guys-2048_1723172636641.jpg");
+          cursor: pointer;
+        }
+      }
+    }
+
+    .procedure-book-ticket {
+      position: relative;
+      z-index: 100;
+      top: -35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .procedure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f5def1;
+        gap: 10px;
+
+        span {
+          width: 25px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: rgb(242 107 56);
+          color: white;
+          margin-left: 20px;
+        }
+
+        .procedure-content {
+          width: 200px;
+          height: 50px;
+          color: rgb(242 107 56);
+          font-size: 18px;
+          border-radius: 5px;
+          cursor: pointer;
+          border: none;
+          background: transparent; // set thẻ input cùng với div (tràn màu)
+          outline: none; // gõ chữ kh hiện khung nữa
+
+          &.buy-ticket {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: rgb(242 107 56);
+            color: white;
+          }
+        }
+      }
+    }
+
+    /* ẩn procedure-book-ticket khi màn hình nhỏ */
+    @media (max-width: 1290px) {
+      .procedure-book-ticket {
+        display: none !important; /* Ẩn khi màn hình nhỏ hơn 1290px */
+      }
+    }
+  }
+
+  // ghi đè lên css của slick
+  .slick-prev {
+    // position: relative !important;
+    left: -18px !important;
+    z-index: 100;
+    height: 48px !important;
+    width: 44px !important;
+    background: green !important;
+    border: 2px solid #d7d7d7 !important;
+
+    &:hover {
+      background: #d7d7d7 !important;
+    }
+
+    &:before {
+      // search: css content icon
+      font-family: "FontAwesome";
+      content: "\f104"; // mã unicode của icon
+    }
+  }
+
+  .slick-next {
+    right: -15px !important;
+    z-index: 100;
+    height: 48px !important;
+    width: 44px !important;
+    background: red !important;
+    border: 2px solid #d7d7d7 !important;
+
+    &:hover {
+      background: #d7d7d7 !important;
+    }
+
+    &:before {
+      font-family: "FontAwesome";
+      content: "\f105"; // mã unicode của icon
+    }
+  }
+
+  // bể layout slider hàng dọc
+  .slider-all .slick-track {
+    display: flex !important; /* Đảm bảo rằng flex không bị ghi đè bởi thuộc tính flex-direction: column; */
+    flex-direction: row; /* Đặt hướng theo hàng ngang */
+  }
+
+  .slick-slide {
+    float: left; /* Đảm bảo rằng các slide không bị ảnh hưởng bởi các thuộc tính khác */
+    display: block;
+  }
+
+  /* Tùy chỉnh chung cho dots */
+  .slick-dots {
+    bottom: -60px; /* Vị trí của dots cách slider 30px từ dưới */
+  }
+
+  /* Tùy chỉnh kích thước và màu sắc của dấu chấm */
+  .slick-dots li button:before {
+    font-size: 12px; /* Kích thước dấu chấm */
+    color: #000; /* Màu sắc dấu chấm */
+    opacity: 0.5; /* Độ mờ của dấu chấm khi không được chọn */
+  }
+
+  /* Tùy chỉnh dấu chấm khi được chọn */
+  .slick-dots li.slick-active button:before {
+    color: #ff5733; /* Màu sắc dấu chấm khi được chọn */
+    opacity: 1; /* Độ mờ của dấu chấm khi được chọn */
+  }
+}
