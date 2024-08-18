@@ -3,11 +3,12 @@ import "./HomeHeader.scss";
 import { Link, NavLink, useNavigate } from "react-router-dom"; // useHistory -> useNavigate
 import { toast } from "react-toastify";
 import _ from "lodash";
-// import * as actions from "../../store/actions";
+import * as actions from "../../store/actions";
 import { LANGUAGE } from "../../utils/constants";
 import Slider from "react-slick"; // băng truyền
 import "slick-carousel/slick/slick.css"; // bể layout slider hàng dọc
 import "slick-carousel/slick/slick-theme.css";
+import { connect } from "react-redux"; // kết nối với store redux
 
 const HomeHeader = (props) => {
   const [dataMoviePopular, setDataMoviePopular] = useState([]); // top 5 ds phim show trên banner
@@ -21,7 +22,10 @@ const HomeHeader = (props) => {
 
   // đẩy ra khi đã có người dùng này
   useEffect(() => {}, []);
-  let language = LANGUAGE.VI;
+
+  const handleChangeLanguage = (language) => {
+    props.changeLanguageApp(language);
+  };
 
   let settings = {
     dots: true, // Ẩn dấu chấm phân trang
@@ -55,6 +59,7 @@ const HomeHeader = (props) => {
     ],
   };
 
+  let language = props.language;
   return (
     <>
       <div className="home-header-container">
@@ -89,6 +94,7 @@ const HomeHeader = (props) => {
                       ? "language-vi active"
                       : "language-vi"
                   }
+                  onClick={() => handleChangeLanguage(LANGUAGE.VI)}
                 >
                   <span>VI</span>
                 </div>
@@ -99,6 +105,7 @@ const HomeHeader = (props) => {
                       ? "language-en active"
                       : "language-en"
                   }
+                  onClick={() => handleChangeLanguage(LANGUAGE.EN)}
                 >
                   <span>EN</span>
                 </div>
@@ -127,7 +134,6 @@ const HomeHeader = (props) => {
             </div>
           </div>
 
-          {/* hamburger menu */}
           <button
             className=" p-4 d-block d-lg-none burger-menu"
             onClick={() => props.handleShowMenuBurger()}
@@ -198,12 +204,16 @@ const HomeHeader = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  console.log("state: ", state);
   return {
-    //     language: state.app.language,
+    language: state.app.language,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    // processLogout: () => dispatch(actions.processLogout()),
+    changeLanguageApp: (language) => dispatch(actions.changeLanguage(language)),
+  };
 };
-export default HomeHeader;
+export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
