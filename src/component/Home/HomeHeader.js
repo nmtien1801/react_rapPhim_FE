@@ -15,9 +15,9 @@ const HomeHeader = (props) => {
   const [showBurgerMenu, setShowBurgerMenu] = useState(false); // show menu burger
 
   let history = useNavigate();
-  //   const handleLogin = () => {
-  //     history.push("/login");
-  //   };
+  const handleLogin = () => {
+    history("/login"); // history.push("/login");
+  };
 
   // đẩy ra khi đã có người dùng này
   useEffect(() => {}, []);
@@ -79,7 +79,9 @@ const HomeHeader = (props) => {
 
               {/* gợi ý search */}
 
-              <div className="login">Đăng nhập</div>
+              <div className="login" onClick={() => handleLogin()}>
+                Đăng nhập
+              </div>
               <div className="language">
                 <div
                   className={

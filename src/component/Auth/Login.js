@@ -3,21 +3,163 @@ import "./Login.scss";
 import { Link, useNavigate } from "react-router-dom"; // useHistory -> useNavigate
 import { toast } from "react-toastify";
 // import { LoginNewUser } from "../../services/userService";
-import _ from "lodash";
+import _, { set } from "lodash";
 // import * as actions from "../../store/actions";
 
 const Login = (props) => {
-  const [email, setEmail] = useState("");
+  const [valueLogin, setValueLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const [isShowPassword, setIsShowPassword] = useState(false);
+  const [isValidValueLogin, setIsValidValueLogin] = useState(true);
+  const [isValidPassword, setIsValidPassword] = useState(true);
+  const [errMessage, setErrMessage] = useState("");
 
   let history = useNavigate();
-  //   const handleLogin = () => {
-  //     history.push("/login");
-  //   };
 
   // đẩy ra khi đã có người dùng này
   useEffect(() => {}, []);
 
-  return <div className="login-container">this is login</div>;
+  const handleOnChangeLogin = (event) => {
+    setValueLogin(event.target.value);
+  };
+
+  // search: press ENTER: react on keypress
+  const handlePressEnter = (event) => {
+    if (event.key === "Enter" && event.charCode === 13) {
+      handleLogin();
+    }
+  };
+
+  const HandleOnChangePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleShowHidePassword = () => {
+    setIsShowPassword(!isShowPassword);
+  };
+
+  const handleLogin = async () => {
+    setErrMessage("");
+
+    if (!valueLogin) {
+      toast.error("please enter your email or phone number");
+      setIsValidValueLogin(false);
+      return;
+    }
+    if (!password) {
+      toast.error("please enter your password");
+      setIsValidPassword(false);
+      return;
+    }
+    // let res = await handleLoginApi(this.state.valueLogin, this.state.password);
+    // if (res && +res.EC === 0) {
+    //   toast.success(res.EM);
+    //   localStorage.setItem("JWT", res.DT.access_token); // cookies đã là string nên không dùng json.stringfy nữa
+    //   this.props.userLoginSuccess(res.DT);
+    // } else {
+    //   toast.error(res.EM);
+    //   this.setState({
+    //     errMessage: res.EM,
+    //   });
+    // }
+  };
+
+  const handleCreateNewAccount = () => {
+    history("/register");
+  };
+
+  return (
+    <div className="login-container">
+      <div className="container">
+        <div className="row px-3 px-ms-0">
+          <div className="content-left col-12 d-none col-sm-7 d-sm-block">
+            <div className="brand">
+              <Link to="/">
+                <span>this is logo</span>
+              </Link>
+            </div>
+            <div className="detail">This is detail</div>
+          </div>
+          <div className="content-right col-12 col-sm-5 d-flex flex-column gap-3 py-3 my-3 ">
+            <div className="brand d-sm-none">This is logo</div>
+            <input
+              className={
+                isValidValueLogin ? "form-control" : "form-control is-invalid"
+              }
+              type="text"
+              placeholder="Email addrest or phone number"
+              value={valueLogin}
+              onChange={(event) => {
+                handleOnChangeLogin(event);
+              }}
+            />
+            <div className="custom-input-password">
+              <input
+                className={
+                  isValidPassword ? "form-control" : "form-control is-invalid"
+                }
+                type={isShowPassword ? "text" : "password"}
+                placeholder="Password"
+                value={password}
+                onKeyPress={(event) => {
+                  handlePressEnter(event);
+                }}
+                onChange={(event) => {
+                  HandleOnChangePassword(event);
+                }}
+              />
+              <span
+                onClick={() => {
+                  handleShowHidePassword();
+                }}
+              >
+                <i
+                  className={isShowPassword ? "fa fa-eye-slash" : "fa fa-eye"}
+                />
+              </span>
+            </div>
+            <div className="col-12" style={{ color: "red" }}>
+              {errMessage}
+            </div>
+            <button
+              className="btn btn-primary login"
+              onClick={() => {
+                handleLogin();
+              }}
+            >
+              Login
+            </button>
+            <span className="forgot-password">
+              <a href="#" className="">
+                forgot your password ?
+              </a>
+              <span className="mx-5"></span>
+              <span className="social-login">
+                <i className="fa fa-google-plus google"></i>
+                <i className="fa fa-facebook facebook"></i>
+              </span>
+            </span>
+
+            <div className="btn-createAccount">
+              <button
+                className="btn btn-success"
+                onClick={() => handleCreateNewAccount()}
+              >
+                Create New Acount
+              </button>
+
+              <div className="mt-3 return">
+                <Link to="/">
+                  <i className="fa fa-arrow-circle-left "></i>
+                  <span title="return to home page">Return To HomePage</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => {
