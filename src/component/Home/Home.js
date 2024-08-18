@@ -11,9 +11,10 @@ import MovieIsShow from "./HomeContent/MovieIsShow";
 import MovieUpComing from "./HomeContent/MovieUpComing";
 import Discount from "./HomeContent/Discount";
 import Cinema_Corner from "./HomeContent/Cinema_Corner/Cinema_Corner";
+import BurgerMenu from "./BurgerMenu";
 
 const Home = (props) => {
-  const [email, setEmail] = useState("");
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false); // show menu burger
 
   let history = useNavigate();
   //   const handleLogin = () => {
@@ -23,22 +24,30 @@ const Home = (props) => {
   // đẩy ra khi đã có người dùng này
   useEffect(() => {}, []);
 
+  const handleShowMenuBurger = () => {
+    setShowBurgerMenu(!showBurgerMenu);
+  };
+
   return (
     <div className="home-container">
       <div className="home-header ">
-        <HomeHeader />
+        <HomeHeader handleShowMenuBurger={handleShowMenuBurger} />
       </div>
-
-      <div className="home-content ">
-        <MovieIsShow />
-        <MovieUpComing />
-        <Discount />
-        <Cinema_Corner />
-      </div>
-
-      <div className="home-footer">
-        <HomeFooter />
-      </div>
+      {showBurgerMenu ? (
+        <BurgerMenu />
+      ) : (
+        <>
+          <div className="home-content ">
+            <MovieIsShow />
+            <MovieUpComing />
+            <Discount />
+            <Cinema_Corner />
+          </div>
+          <div className="home-footer">
+            <HomeFooter />
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -1,0 +1,15 @@
+// menu burger
+.show-menu-burger {
+  background-color: white;
+  width: 100vw; /* Chiếm toàn bộ chiều rộng của màn hình */
+  height: 100vh; /* Chiếm toàn bộ chiều cao của màn hình */
+  z-index: 10000; /* Đảm bảo menu hiển thị trên cả header */
+  position: absolute;
+  top: 130px; // đẩy menu xuống dưới header
+
+  .menu-item {
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+}

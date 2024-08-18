@@ -127,6 +127,19 @@
             }
           }
         }
+
+        /* ẩn search, login và language khi màn hình nhỏ */
+        @media (max-width: 992px) {
+          .search {
+            display: none !important; /* Ẩn khi màn hình nhỏ hơn 992px */
+          }
+          .login {
+            display: none !important; /* Ẩn khi màn hình nhỏ hơn 992px */
+          }
+          .language {
+            display: none !important; /* Ẩn khi màn hình nhỏ hơn 992px */
+          }
+        }
       }
     }
 
@@ -189,6 +202,14 @@
         }
       }
     }
+    // css hamburger menu
+    .burger-menu {
+      position: absolute;
+      right: 130px;
+      top: 25px;
+      border: none;
+      background-color: white;
+    }
   }
 
   // ẩn option-header khi màn hình nhỏ
@@ -203,9 +224,10 @@
     .slider-all {
       .customize-img-slider-header {
         .bg-img {
-          height: 362px;
-          width: 1136px;
-          transform: translateX(25px); /* Căn giữa theo chiều ngang */
+          width: 100%; /* Chiều rộng tự động điều chỉnh */
+          max-width: 1136px; /* Chiều rộng tối đa */
+          padding-top: 31.86%; /* Tạo chiều cao theo tỷ lệ 362/1136 */
+
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center center;
@@ -338,3 +360,4 @@
     opacity: 1; /* Độ mờ của dấu chấm khi được chọn */
   }
 }
+

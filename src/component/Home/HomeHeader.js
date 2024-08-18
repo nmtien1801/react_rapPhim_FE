@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./HomeHeader.scss";
-import { Link, useNavigate } from "react-router-dom"; // useHistory -> useNavigate
+import { Link, NavLink, useNavigate } from "react-router-dom"; // useHistory -> useNavigate
 import { toast } from "react-toastify";
 import _ from "lodash";
 // import * as actions from "../../store/actions";
@@ -12,6 +12,8 @@ import "slick-carousel/slick/slick-theme.css";
 const HomeHeader = (props) => {
   const [dataMoviePopular, setDataMoviePopular] = useState([]); // top 5 ds phim show trên banner
   const [dataPromotion, setDataPromotion] = useState([]); // ds ưu đãi
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false); // show menu burger
+
   let history = useNavigate();
   //   const handleLogin = () => {
   //     history.push("/login");
@@ -44,6 +46,8 @@ const HomeHeader = (props) => {
           slidesToScroll: 1,
 
           centerMode: false, // dư ra 1 phần ở 2 bên
+          centerPadding: 0, // Khoảng cách từ cạnh trái/phải của các slide
+
           infinite: true,
           dots: true, // Ẩn dấu chấm phân trang
         },
@@ -52,147 +56,142 @@ const HomeHeader = (props) => {
   };
 
   return (
-    <div className="home-header-container">
-      <div className="up">
-        <div className="row intro-header">
-          <div className="logo-header col-md-2"></div>
+    <>
+      <div className="home-header-container">
+        <div className="up">
+          <div className="row intro-header">
+            <div className="logo-header col-md-2"></div>
 
-          <div className="booking col-md-4">
-            <div className="booking-ticket">
-              <i className="fa fa-ticket me-2"></i>ĐẶT VÉ NGAY
-            </div>
-            <div className="booking-food">
-              <i className="fa fa-trash-o me-2"></i>ĐẶT BẮP NƯỚC
-            </div>
-          </div>
-
-          <div className="login-header col-md-6 ">
-            <div className="search">
-              <input type="text" placeholder="Tìm kiếm" />
-              <i className="fa fa-search" aria-hidden="true"></i>
-            </div>
-            <div className="login">Đăng nhập</div>
-            <div className="language">
-              <div
-                className={
-                  language === LANGUAGE.VI
-                    ? "language-vi active"
-                    : "language-vi"
-                }
-              >
-                <span>VI</span>
+            <div className="booking col-md-4">
+              <div className="booking-ticket">
+                <i className="fa fa-ticket me-2"></i>ĐẶT VÉ NGAY
               </div>
-
-              <div
-                className={
-                  language === LANGUAGE.EN
-                    ? "language-en active"
-                    : "language-en"
-                }
-              >
-                <span>EN</span>
+              <div className="booking-food">
+                <i className="fa fa-trash-o me-2"></i>ĐẶT BẮP NƯỚC
               </div>
             </div>
-          </div>
-        </div>
 
-        <div className="option-header row">
-          <div className="option-app-location col-md-3">
-            <div className="choose-location">
-              <i className="fa fa-map-marker me-2"></i>
-              Chọn rạp
-            </div>
-            <div className="choose-time">
-              <i className="fa fa-map-marker me-2"></i>
-              lịch chiếu
-            </div>
-          </div>
-          <div className="col-md-4"></div>
-          <div className="option-app-menu col-md-5">
-            <div className="buy-ticket">mua vé</div>
-            <div className="movie">Phim</div>
-            <div className="cinema-corner">góc điện ảnh</div>
-            <div className="event">Sự kiện</div>
-            <div className="Theaters-ticketPrices">Rạp/giá vé</div>
-          </div>
-        </div>
+            <div className="login-header col-md-6 ">
+              <div className="search">
+                <input type="text" placeholder="Tìm kiếm" />
+                <i className="fa fa-search" aria-hidden="true"></i>
+              </div>
 
-        {/* gợi ý search */}
-        {/* <button className="p-4 lg:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6 text-gray-100"
+              {/* gợi ý search */}
+
+              <div className="login">Đăng nhập</div>
+              <div className="language">
+                <div
+                  className={
+                    language === LANGUAGE.VI
+                      ? "language-vi active"
+                      : "language-vi"
+                  }
+                >
+                  <span>VI</span>
+                </div>
+
+                <div
+                  className={
+                    language === LANGUAGE.EN
+                      ? "language-en active"
+                      : "language-en"
+                  }
+                >
+                  <span>EN</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="option-header row">
+            <div className="option-app-location col-md-3">
+              <div className="choose-location">
+                <i className="fa fa-map-marker me-2"></i>
+                Chọn rạp
+              </div>
+              <div className="choose-time">
+                <i className="fa fa-map-marker me-2"></i>
+                lịch chiếu
+              </div>
+            </div>
+            <div className="col-md-4"></div>
+            <div className="option-app-menu col-md-5">
+              <div className="buy-ticket">mua vé</div>
+              <div className="movie">Phim</div>
+              <div className="cinema-corner">góc điện ảnh</div>
+              <div className="event">Sự kiện</div>
+              <div className="Theaters-ticketPrices">Rạp/giá vé</div>
+            </div>
+          </div>
+
+          {/* hamburger menu */}
+          <button
+            className=" p-4 d-block d-lg-none burger-menu"
+            onClick={() => props.handleShowMenuBurger()}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button> */}
-      </div>
-
-      <div className="down">
-        <div className="slider-all">
-          <Slider {...settings}>
-            <div className="customize-img-slider-header">
-              <div className="bg-img"></div>
-            </div>
-            <div className="customize-img-slider-header">
-              <div className="bg-img"></div>
-            </div>
-            <div className="customize-img-slider-header">
-              <div className="bg-img"></div>
-            </div>
-            <div className="customize-img-slider-header">
-              <div className="bg-img"></div>
-            </div>
-            <div className="customize-img-slider-header">
-              <div className="bg-img"></div>
-            </div>
-            <div className="customize-img-slider-header">
-              <div className="bg-img"></div>
-            </div>
-          </Slider>
+            <i className="fa fa-bars"></i>
+          </button>
         </div>
 
-        <div className="procedure-book-ticket">
-          <div className="procedure">
-            <span>1</span>
-            <select className="procedure-content">
-              <option value={"Chọn Phim"}>Chọn Phim</option>
-            </select>
+        <div className="down">
+          <div className="slider-all">
+            <Slider {...settings}>
+              <div className="customize-img-slider-header">
+                <div className="bg-img"></div>
+              </div>
+              <div className="customize-img-slider-header">
+                <div className="bg-img"></div>
+              </div>
+              <div className="customize-img-slider-header">
+                <div className="bg-img"></div>
+              </div>
+              <div className="customize-img-slider-header">
+                <div className="bg-img"></div>
+              </div>
+              <div className="customize-img-slider-header">
+                <div className="bg-img"></div>
+              </div>
+              <div className="customize-img-slider-header">
+                <div className="bg-img"></div>
+              </div>
+            </Slider>
           </div>
 
-          <div className="procedure">
-            <span>2</span>
-            <select className="procedure-content">
-              <option value={"Chọn Rạp"}>Chọn Rạp</option>
-            </select>
-          </div>
+          <div className="procedure-book-ticket">
+            <div className="procedure">
+              <span>1</span>
+              <select className="procedure-content">
+                <option value={"Chọn Phim"}>Chọn Phim</option>
+              </select>
+            </div>
 
-          <div className="procedure">
-            <span>3</span>
-            <select className="procedure-content">
-              <option value={"Chọn Ngày"}>Chọn Ngày</option>
-            </select>
-          </div>
-          <div className="procedure">
-            <span>4</span>
-            <select className="procedure-content">
-              <option value={"Chọn Suất"}>Chọn Suất</option>
-            </select>
-          </div>
-          <div className="procedure">
-            <div className="procedure-content buy-ticket">Mua Vé Nhanh</div>
+            <div className="procedure">
+              <span>2</span>
+              <select className="procedure-content">
+                <option value={"Chọn Rạp"}>Chọn Rạp</option>
+              </select>
+            </div>
+
+            <div className="procedure">
+              <span>3</span>
+              <select className="procedure-content">
+                <option value={"Chọn Ngày"}>Chọn Ngày</option>
+              </select>
+            </div>
+            <div className="procedure">
+              <span>4</span>
+              <select className="procedure-content">
+                <option value={"Chọn Suất"}>Chọn Suất</option>
+              </select>
+            </div>
+            <div className="procedure">
+              <div className="procedure-content buy-ticket">Mua Vé Nhanh</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

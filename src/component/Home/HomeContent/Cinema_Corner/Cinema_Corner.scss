@@ -78,8 +78,11 @@
 .review-container {
   .img-review {
     .img {
-      height: 400px;
-      width: 100%;
+      // response image
+      width: 100%; /* Chiều rộng tự động điều chỉnh */
+      max-width: 628px; /* Chiều rộng tối đa */
+      padding-top: 63.69%; /* Tạo chiều cao theo tỷ lệ 400/628 */
+
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -91,6 +94,7 @@
       &.right-location {
         height: 130px;
         width: 195px;
+
         margin-bottom: 10px;
         margin-right: 20px;
       }

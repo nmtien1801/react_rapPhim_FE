@@ -10,9 +10,10 @@
   .session-movie-list {
     .customize-img-slider {
       .bg-img {
-        height: 423px;
-        width: 280px;
-        transform: translateX(20px); /* Căn giữa theo chiều ngang */
+        width: 100%; /* Chiều rộng tự động điều chỉnh */
+        max-width: 280px; /* Chiều rộng tối đa */
+        padding-top: 151%; /* Tạo chiều cao theo tỷ lệ 423/280 */
+        
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
