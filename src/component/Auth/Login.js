@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom"; // useHistory -> useNaviga
 import { toast } from "react-toastify";
 // import { LoginNewUser } from "../../services/userService";
 import _, { set } from "lodash";
-// import * as actions from "../../store/actions";
+import * as actions from "../../store/actions";
 
 const Login = (props) => {
   const [valueLogin, setValueLogin] = useState("");
@@ -164,8 +164,8 @@ const Login = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    //     language: state.app.language,
-    //     userInfo: state.user.userInfo,
+    language: state.app.language,
+    userInfo: state.user.userInfo,
     //     isLoggedIn: state.user.isLoggedIn,
   };
 };
@@ -173,9 +173,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     // navigate: (path) => dispatch(push(path)),
-    //     userLoginFail: () => dispatch(actions.userLoginFail()),
-    //     userLoginSuccess: (userInfo) =>
-    //       dispatch(actions.userLoginSuccess(userInfo)),
+    userLoginFail: () => dispatch(actions.userLoginFail()),
+    userLoginSuccess: (userInfo) =>
+      dispatch(actions.userLoginSuccess(userInfo)),
   };
 };
 export default Login;

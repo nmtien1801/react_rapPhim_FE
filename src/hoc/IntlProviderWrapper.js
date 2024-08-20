@@ -31,7 +31,7 @@ class IntlProviderWrapper extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    // language: state.app.language,
+    language: state.app.language,
   };
 };
 

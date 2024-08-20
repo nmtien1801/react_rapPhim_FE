@@ -13,7 +13,7 @@ const instance = axios.create({
 //Search: what is brearer token
 instance.defaults.headers.common[
   "Authorization"
-] = `Bearer ${localStorage.getItem("JWT")}`;
+] = `Bearer ${localStorage.getItem("rapPhim")}`;
 
 // Add a request interceptor
 instance.interceptors.request.use(
@@ -69,6 +69,7 @@ instance.interceptors.response.use(
 
       // not found get /post / delete /put
       case 404: {
+        // react không hiểu .env (REACT_APP_BACKEND_URL) -> khởi động lại
         return Promise.reject(error);
       }
 

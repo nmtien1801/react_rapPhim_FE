@@ -3,7 +3,8 @@ import "./Register.scss";
 import { Link, useNavigate } from "react-router-dom"; // useHistory -> useNavigate
 import { toast } from "react-toastify";
 import _ from "lodash";
-// import * as actions from "../../store/actions";
+import * as actions from "../../store/actions";
+import { registerNewUser } from "../../service/userService";
 
 const Register = (props) => {
   const [email, setEmail] = useState("");
@@ -71,19 +72,19 @@ const Register = (props) => {
   const handleRegister = async () => {
     let check = isValidInput();
     if (check === true) {
-      // let res = await registerNewUser(email, phone, userName, password);
-      // let serviceData = res;
-      // // +: convert number -> String
-      // if (+serviceData.EC === 0) {
-      //   toast.success(serviceData.EM);
-      //   history("/login");
-      // } else {
-      //   toast.error(serviceData.EM);
-      //   if (serviceData.DT === "email") {
-      //     // bôi đỏ lại input bị sai
-      //     setObjCheckInput({ ...defaulValidInput, isValidEmail: false });
-      //   }
-      // }
+      let res = await registerNewUser(email, phone, userName, password);
+      let serviceData = res;
+      // +: convert number -> String
+      if (+serviceData.EC === 0) {
+        toast.success(serviceData.EM);
+        history("/login");
+      } else {
+        toast.error(serviceData.EM);
+        if (serviceData.DT === "email_red") {
+          // bôi đỏ lại input bị sai
+          setObjCheckInput({ ...defaulValidInput, isValidEmail: false });
+        }
+      }
     }
   };
 
@@ -210,7 +211,7 @@ const Register = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    //     language: state.app.language,
+    language: state.app.language,
     //     userInfo: state.user.userInfo,
     //     isLoggedIn: state.user.isLoggedIn,
   };
