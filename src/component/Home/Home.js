@@ -12,14 +12,12 @@ import MovieUpComing from "./HomeContent/MovieUpComing";
 import Discount from "./HomeContent/Discount";
 import Cinema_Corner from "./HomeContent/Cinema_Corner/Cinema_Corner";
 import BurgerMenu from "./BurgerMenu";
+import { connect } from "react-redux"; // kết nối với store redux
 
 const Home = (props) => {
   const [showBurgerMenu, setShowBurgerMenu] = useState(false); // show menu burger
 
   let history = useNavigate();
-  //   const handleLogin = () => {
-  //     history.push("/login");
-  //   };
 
   // đẩy ra khi đã có người dùng này
   useEffect(() => {}, []);
@@ -54,18 +52,13 @@ const Home = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    //     language: state.app.language,
-    //     userInfo: state.user.userInfo,
-    //     isLoggedIn: state.user.isLoggedIn,
+    language: state.app.language,
+    userInfo: state.user.userInfo,
+    isLoggedIn: state.user.isLoggedIn,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    // navigate: (path) => dispatch(push(path)),
-    //     userLoginFail: () => dispatch(actions.userLoginFail()),
-    //     userLoginSuccess: (userInfo) =>
-    //       dispatch(actions.userLoginSuccess(userInfo)),
-  };
+  return {};
 };
-export default Home;
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

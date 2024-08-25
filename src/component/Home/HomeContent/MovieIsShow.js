@@ -12,9 +12,6 @@ const MovieIsShow = (props) => {
   const [email, setEmail] = useState("");
 
   let history = useNavigate();
-  //   const handleLogin = () => {
-  //     history.push("/login");
-  //   };
 
   // đẩy ra khi đã có người dùng này
   useEffect(() => {}, []);

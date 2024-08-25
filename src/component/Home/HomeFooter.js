@@ -4,14 +4,12 @@ import { Link, useNavigate } from "react-router-dom"; // useHistory -> useNaviga
 import { toast } from "react-toastify";
 import _ from "lodash";
 // import * as actions from "../../store/actions";
+import { connect } from "react-redux"; // kết nối với store redux
 
 const HomeFooter = (props) => {
   const [email, setEmail] = useState("");
 
   let history = useNavigate();
-  //   const handleLogin = () => {
-  //     history.push("/login");
-  //   };
 
   // đẩy ra khi đã có người dùng này
   useEffect(() => {}, []);
@@ -28,4 +26,4 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {};
 };
-export default HomeFooter;
+export default connect(mapStateToProps, mapDispatchToProps)(HomeFooter);

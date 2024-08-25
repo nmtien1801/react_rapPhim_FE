@@ -9,6 +9,7 @@ import Slider from "react-slick"; // băng truyền
 import "slick-carousel/slick/slick.css"; // bể layout slider hàng dọc
 import "slick-carousel/slick/slick-theme.css";
 import { connect } from "react-redux"; // kết nối với store redux
+import { logoutUser } from "../../service/userService";
 
 const HomeHeader = (props) => {
   const [dataMoviePopular, setDataMoviePopular] = useState([]); // top 5 ds phim show trên banner
@@ -59,7 +60,19 @@ const HomeHeader = (props) => {
     ],
   };
 
-  let language = props.language;
+  const handleLogout = async () => {
+    localStorage.removeItem("rapPhim"); // clear local storage
+    let data = await logoutUser(); // clear cookies
+    if (data && +data.EC === 0) {
+      props.processLogout();
+      toast.success("logout success...");
+      // redux tự đẩy về trang login
+    } else {
+      toast.error(data.EM);
+    }
+  };
+
+  let { language, isLoggedIn } = props;
   return (
     <>
       <div className="home-header-container">
@@ -83,10 +96,29 @@ const HomeHeader = (props) => {
               </div>
 
               {/* gợi ý search */}
+              {isLoggedIn === false ? (
+                <div className="login" onClick={() => handleLogin()}>
+                  <i className="fa fa-user-circle-o"></i>
+                  <span>Đăng nhập</span>
+                </div>
+              ) : (
+                <div className="login login-auth">
+                  <i className="fa fa-user-circle-o"></i>
+                  {/* <span>Nguyễn Minh Tiến</span> */}
+                  <div className="login-auth-content">
+                    <div className="login-auth-content-item">
+                      Thông tin cá nhân
+                    </div>
+                    <div
+                      className="login-auth-content-item"
+                      onClick={() => handleLogout()}
+                    >
+                      Đăng xuất
+                    </div>
+                  </div>
+                </div>
+              )}
 
-              <div className="login" onClick={() => handleLogin()}>
-                Đăng nhập
-              </div>
               <div className="language">
                 <div
                   className={
@@ -204,15 +236,15 @@ const HomeHeader = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log("state: ", state);
   return {
     language: state.app.language,
+    isLoggedIn: state.user.isLoggedIn,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // processLogout: () => dispatch(actions.processLogout()),
+    processLogout: () => dispatch(actions.processLogout()),
     changeLanguageApp: (language) => dispatch(actions.changeLanguage(language)),
   };
 };

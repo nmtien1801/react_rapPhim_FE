@@ -1,6 +1,6 @@
 import customizeAxios from "../setup/customizeAxios";
 
-const handleLoginApi = (valueLogin, password) => {
+const handleLogin = (valueLogin, password) => {
   return customizeAxios.post(`/api/login`, { valueLogin, password });
 };
 
@@ -18,4 +18,4 @@ const logoutUser = () => {
   return customizeAxios.post("/api/logout");
 };
 
-export { handleLoginApi, registerNewUser, logoutUser };
+export { handleLogin, registerNewUser, logoutUser };

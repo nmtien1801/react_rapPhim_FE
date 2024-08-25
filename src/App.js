@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from "./component/Home/Home";
 import Login from "./component/Auth/Login";
 import Register from "./component/Auth/Register";
+import { connect } from "react-redux";
 
 function App() {
   return (
@@ -43,4 +44,13 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.user.isLoggedIn,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);

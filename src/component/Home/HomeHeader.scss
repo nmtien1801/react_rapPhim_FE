@@ -60,7 +60,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 469px;
+          width: 400px;
           border-radius: 30px;
           background-color: white;
           i {
@@ -91,10 +91,49 @@
 
         .login {
           cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            font-size: 30px;
+            padding: 10px;
+          }
           &:hover {
             color: rgb(242 107 56);
           }
+
+          &.login-auth {
+            position: relative;
+
+            .login-auth-content {
+              display: none;
+            }
+
+            &:hover {
+              // color: rgb(242 107 56);
+              .login-auth-content {
+                display: block;
+                position: absolute;
+                left: -50px;
+                top: 48px;
+                background-color: white;
+                color: black;
+
+                .login-auth-content-item {
+                  border: 1px solid #d7d7d7;
+                  width: 150px;
+                  height: 30px;
+
+                  &:hover {
+                    color: rgb(242 107 56);
+                  }
+                }
+              }
+            }
+          }
         }
+
         .language {
           display: flex;
 
@@ -360,4 +399,3 @@
     opacity: 1; /* Độ mờ của dấu chấm khi được chọn */
   }
 }
-
