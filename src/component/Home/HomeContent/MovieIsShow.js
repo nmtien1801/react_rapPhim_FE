@@ -55,14 +55,27 @@ const MovieIsShow = (props) => {
     ],
   };
 
+  const handleBookingMovie = (movie) => {
+    // detail-movie
+    history(`/dat-ve/${movie.id}`);
+  };
+
   return (
     <div className="session movie-is-show-container">
       <div className="title">PHIM ĐANG CHIẾU</div>
       <div className="session-movie-list">
         <Slider {...settings}>
           <div className="customize-img-slider">
-            <div className="bg-img"></div>
-            <div className="name-movie">DeadPool and wolverine</div>
+            <div
+              className="bg-img"
+              onClick={() => handleBookingMovie({ id: 2 })}
+            ></div>
+            <div
+              className="name-movie"
+              onClick={() => handleBookingMovie({ id: 2 })}
+            >
+              DeadPool and wolverine
+            </div>
             <div className="option-movie">
               <Link to="/detail-movie">
                 <i className="fa fa-play-circle me-2"></i>Xem trailer

@@ -15,16 +15,20 @@ import "react-toastify/dist/ReactToastify.css";
 import Home from "./component/Home/Home";
 import Login from "./component/Auth/Login";
 import Register from "./component/Auth/Register";
+import DatVe from "./component/Movie/DatVe";
 import { connect } from "react-redux";
+import { path } from "./utils/constants";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path={path.HOME} exact element={<Home />} />
+          <Route path={path.LOGIN} element={<Login />} />
+          <Route path={path.REGISTER} element={<Register />} />
+
+          <Route path={path.DAT_VE} element={<DatVe />} />
         </Routes>
 
         <ToastContainer
