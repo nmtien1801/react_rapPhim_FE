@@ -1,7 +1,6 @@
 .home-header-container {
   .up {
     padding: 10px 120px;
-    margin-bottom: 20px;
     background-color: white;
 
     .intro-header {
@@ -188,7 +187,9 @@
         justify-content: left;
         align-items: center;
         gap: 30px;
+
         .choose-location {
+          padding-bottom: 20px;
           cursor: pointer;
           &:hover {
             color: rgb(242 107 56);
@@ -197,6 +198,7 @@
 
         .choose-time {
           cursor: pointer;
+          padding-bottom: 20px;
           &:hover {
             color: rgb(242 107 56);
           }
@@ -211,30 +213,35 @@
 
         .buy-ticket {
           cursor: pointer;
+          padding-bottom: 20px;
           &:hover {
             color: rgb(242 107 56);
           }
         }
         .movie {
           cursor: pointer;
+          padding-bottom: 20px;
           &:hover {
             color: rgb(242 107 56);
           }
         }
         .cinema-corner {
           cursor: pointer;
+          padding-bottom: 20px;
           &:hover {
             color: rgb(242 107 56);
           }
         }
         .event {
           cursor: pointer;
+          padding-bottom: 20px;
           &:hover {
             color: rgb(242 107 56);
           }
         }
         .Theaters-ticketPrices {
           cursor: pointer;
+          padding-bottom: 20px;
           &:hover {
             color: rgb(242 107 56);
           }

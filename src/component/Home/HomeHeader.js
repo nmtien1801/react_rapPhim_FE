@@ -72,6 +72,10 @@ const HomeHeader = (props) => {
     }
   };
 
+  const handleChooseMovie = () => {
+    history("/booking");
+  };
+
   let { language, isLoggedIn } = props;
   return (
     <>
@@ -158,7 +162,9 @@ const HomeHeader = (props) => {
             </div>
             <div className="col-md-4"></div>
             <div className="option-app-menu col-md-5">
-              <div className="buy-ticket">mua vé</div>
+              <div className="buy-ticket" onClick={() => handleChooseMovie()}>
+                mua vé
+              </div>
               <div className="movie">Phim</div>
               <div className="cinema-corner">góc điện ảnh</div>
               <div className="event">Sự kiện</div>

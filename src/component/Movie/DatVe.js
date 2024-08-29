@@ -29,7 +29,9 @@ const DatVe = (props) => {
 
   return (
     <div className="booking-ticket-container">
-      <HomeHeader />
+      <div className="header-css">
+        <HomeHeader />
+      </div>
 
       <div className="booking-ticket-content">
         <div className="detail-movie">
@@ -150,7 +152,6 @@ const DatVe = (props) => {
               </div>
             ))}
           </div>
-          <div></div>
         </div>
       </div>
 

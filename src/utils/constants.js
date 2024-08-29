@@ -10,4 +10,5 @@ export const path = {
   REGISTER: "/register",
 
   DAT_VE: "/dat-ve/:id",
+  BOOKING: "/booking",
 };

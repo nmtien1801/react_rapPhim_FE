@@ -18,6 +18,7 @@ import Register from "./component/Auth/Register";
 import DatVe from "./component/Movie/DatVe";
 import { connect } from "react-redux";
 import { path } from "./utils/constants";
+import ChooseMovie from "./component/Movie/procedureBooking/ChooseMovie";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path={path.REGISTER} element={<Register />} />
 
           <Route path={path.DAT_VE} element={<DatVe />} />
+          <Route path={path.BOOKING} element={<ChooseMovie />} />
         </Routes>
 
         <ToastContainer

@@ -1,0 +1,269 @@
+.choose-movie-container .header-css {
+  .up {
+    .intro-header {
+      border: none;
+    }
+  }
+
+  .option-header {
+    display: none;
+  }
+
+  .down {
+    display: none;
+  }
+}
+
+// ghi đè lên css của slick
+.choose-movie-container {
+  .slick-prev {
+    left: -6% !important;
+    height: 65px !important;
+    width: 65px !important;
+    border-radius: 50%;
+    background: rgb(249, 249, 249) !important;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 700;
+    top: 50%;
+    transform: translate(6.4%, -45%) !important;
+    border: none !important;
+
+    &:before {
+      // search: css content icon
+      position: absolute;
+      top: 35%;
+      right: 43%;
+      font-family: "FontAwesome";
+      content: "\f104"; // mã unicode của icon
+      color: black;
+      font-weight: 600;
+    }
+  }
+
+  .slick-next {
+    right: -4% !important;
+    height: 65px !important;
+    width: 65px !important;
+    border-radius: 50%;
+    background: rgb(249, 249, 249) !important;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 700;
+    top: 50%;
+    transform: translate(6.4%, -45%) !important;
+    border: none !important;
+
+    &:before {
+      // search: css content icon
+      position: absolute;
+      top: 35%;
+      right: 43%;
+      font-family: "FontAwesome";
+      content: "\f105"; // mã unicode của icon
+      color: black;
+      font-weight: 600;
+    }
+  }
+}
+
+.choose-movie-container {
+  text-align: left;
+
+  .procedure-booking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 17px;
+    padding: 0 120px;
+    padding-bottom: 30px;
+
+    .choose {
+      position: relative;
+      color: #1b4ea2;
+      &:hover {
+        cursor: pointer;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: calc(100% + 30px);
+        height: 2px;
+        left: -10px;
+        bottom: -20px;
+        background-color: #1b4ea2;
+      }
+    }
+
+    .not-choose {
+      position: relative;
+      color: #d0d0d0;
+      &:hover {
+        cursor: pointer;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: calc(100% + 30px);
+        height: 1.8px;
+        left: -10px;
+        bottom: -20px;
+        background-color: #d0d0d0;
+      }
+    }
+  }
+
+  .procedure-choose-movie {
+    background-color: rgb(249 249 249);
+    padding: 0 120px;
+
+    .left {
+      .choose-css {
+        background-color: white;
+        margin: 30px 0;
+
+        padding: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+
+        .title {
+          font-size: 20px;
+          font-weight: 600;
+          padding-bottom: 10px;
+        }
+
+        .show-location {
+          padding: 10px 0;
+          .btn {
+            margin-right: 10px;
+            border: 1px solid #d0d0d0;
+
+            &:hover {
+              background-color: #1b4ea2;
+              color: white;
+            }
+          }
+        }
+
+        .show-movie {
+          .customize-img-slider-movie {
+            .bg-img {
+              width: 100%; /* Chiều rộng tự động điều chỉnh */
+              max-width: 192px; /* Chiều rộng tối đa */
+              padding-top: 158%; /* Tạo chiều cao theo tỷ lệ  */
+              border-radius: 5px;
+
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-image: url("../../../../public/movie/handsome-guys-min.jpg");
+              cursor: pointer;
+            }
+          }
+        }
+
+        .show-time {
+          .option-schedule {
+            .schedule {
+              display: flex;
+              justify-content: left;
+              align-items: center;
+              gap: 20px;
+
+              div {
+                width: 100%;
+                max-width: 90px;
+                text-align: center;
+                border-radius: 5px;
+                &:hover {
+                  cursor: pointer;
+                }
+
+                &.active {
+                  background-color: rgb(3 78 162);
+                  color: white;
+                }
+              }
+            }
+          }
+
+          .content-schedule {
+            .cinema-showTime {
+              padding: 40px 20px;
+              border-bottom: 1px solid rgb(219, 217, 217);
+              .thread {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 20px;
+              }
+
+              .detail-booking {
+                display: flex;
+                justify-content: left;
+                gap: 50px;
+
+                .btn {
+                  border: 1px solid gray;
+                  width: 100%;
+                  max-width: 100px;
+                  padding: auto;
+
+                  &:hover {
+                    background-color: rgb(3 78 162);
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      background-color: rgb(249 249 249);
+      padding: 40px;
+
+      .right-content {
+        background-color: white;
+        padding: 16px;
+        border-radius: 7px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+        .info-img {
+          display: flex;
+          justify-content: left;
+          gap: 20px;
+          padding-bottom: 20px;
+
+          .img {
+            height: 175px;
+            width: 117px;
+            // image
+            background-image: url("../../../../public/movie/handsome-guys-min.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+          }
+        }
+
+        .show-time-movie-select {
+          .location {
+            padding-bottom: 10px;
+          }
+          .time {
+          }
+        }
+
+        .pay {
+          display: flex;
+          justify-content: space-between;
+          border-top: 1px dashed;
+          margin-top: 30px;
+          padding: 20px 0;
+        }
+      }
+    }
+  }
+}
