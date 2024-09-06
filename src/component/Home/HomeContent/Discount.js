@@ -27,6 +27,9 @@ const Discount = (props) => {
     slidesToShow: 3, // số lượng slide hiển thị
     slidesToScroll: 1, // số lượng slide di chuyển
 
+    centerMode: true, // kích hoạt chế độ trung tâm
+    centerPadding: "20px", // khoảng cách giữa các slide
+
     // khi màn hình thu nhỏ sẽ thay đổi theo
     responsive: [
       {

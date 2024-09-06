@@ -338,6 +338,48 @@
     }
   }
 
+  .show-modal-movie {
+    position: absolute;
+    z-index: 100;
+    top: 160px;
+    left: 40%;
+    width: 800px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+
+    .modal-movie-fix-is-show {
+      .customize-img-slider {
+        .bg-img {
+          max-width: 110px;
+        }
+
+        .name-movie {
+          font-size: 14px;
+        }
+      }
+
+      .option-movie {
+        display: none !important;
+      }
+    }
+
+    .modal-movie-fix-up-coming {
+      .customize-img-slider {
+        .bg-img {
+          max-width: 110px;
+        }
+
+        .name-movie {
+          font-size: 14px;
+        }
+      }
+
+      .option-movie {
+        display: none !important;
+      }
+    }
+  }
+
   // ghi đè lên css của slick
   .slick-prev {
     // position: relative !important;

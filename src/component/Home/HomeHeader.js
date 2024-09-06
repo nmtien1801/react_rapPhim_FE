@@ -10,13 +10,18 @@ import "slick-carousel/slick/slick.css"; // bể layout slider hàng dọc
 import "slick-carousel/slick/slick-theme.css";
 import { connect } from "react-redux"; // kết nối với store redux
 import { logoutUser } from "../../service/userService";
+import { Modal } from "bootstrap";
+import MovieIsShow from "./HomeContent/MovieIsShow"; // dùng trong modal hover vào phim
+import MovieUpcoming from "./HomeContent/MovieUpComing";
 
 const HomeHeader = (props) => {
   const [dataMoviePopular, setDataMoviePopular] = useState([]); // top 5 ds phim show trên banner
   const [dataPromotion, setDataPromotion] = useState([]); // ds ưu đãi
   const [showBurgerMenu, setShowBurgerMenu] = useState(false); // show menu burger
+  const [showModalPhim, setShowModalPhim] = useState(false); // show modal
 
   let history = useNavigate();
+
   const handleLogin = () => {
     history("/login"); // history.push("/login");
   };
@@ -74,6 +79,14 @@ const HomeHeader = (props) => {
 
   const handleChooseMovie = () => {
     history("/booking");
+  };
+
+  // ẩn hiện modal khi hover vào phim
+  const handleOnShowModalMovie = () => {
+    setShowModalPhim(true);
+  };
+  const handleOnHideModalMovie = () => {
+    // setShowModalPhim(false);
   };
 
   let { language, isLoggedIn } = props;
@@ -165,7 +178,13 @@ const HomeHeader = (props) => {
               <div className="buy-ticket" onClick={() => handleChooseMovie()}>
                 mua vé
               </div>
-              <div className="movie">Phim</div>
+              <div
+                className="movie"
+                onMouseOver={() => handleOnShowModalMovie()}
+                onMouseOut={() => handleOnHideModalMovie()}
+              >
+                Phim
+              </div>
               <div className="cinema-corner">góc điện ảnh</div>
               <div className="event">Sự kiện</div>
               <div className="Theaters-ticketPrices">Rạp/giá vé</div>
@@ -236,6 +255,21 @@ const HomeHeader = (props) => {
             </div>
           </div>
         </div>
+
+        {showModalPhim && (
+          <div
+            className="show-modal-movie"
+            onMouseOver={() => handleOnShowModalMovie()}
+            onMouseLeave={() => handleOnHideModalMovie()}
+          >
+            <div className="modal-movie-fix-is-show">
+              <MovieIsShow />
+            </div>
+            <div className="modal-movie-fix-up-coming">
+              <MovieUpcoming />
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
