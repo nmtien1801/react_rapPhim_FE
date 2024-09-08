@@ -13,12 +13,17 @@ import { logoutUser } from "../../service/userService";
 import { Modal } from "bootstrap";
 import MovieIsShow from "./HomeContent/MovieIsShow"; // dùng trong modal hover vào phim
 import MovieUpcoming from "./HomeContent/MovieUpComing";
+import CustomScrollbars from "../../setup/CustomScrollbars";
 
 const HomeHeader = (props) => {
   const [dataMoviePopular, setDataMoviePopular] = useState([]); // top 5 ds phim show trên banner
   const [dataPromotion, setDataPromotion] = useState([]); // ds ưu đãi
   const [showBurgerMenu, setShowBurgerMenu] = useState(false); // show menu burger
-  const [showModalPhim, setShowModalPhim] = useState(false); // show modal
+
+  const [showModalPhim, setShowModalPhim] = useState(false); // show modal phim
+  const [showModalCornerMovie, setShowModalCornerMovie] = useState(false); // show modal góc điện ảnh
+  const [showModalEvent, setShowModalEvent] = useState(false); // show modal sự kiện
+  const [showModalTheaters, setShowModalTheaters] = useState(false); // show modal rạp/giá vé
 
   let history = useNavigate();
 
@@ -86,7 +91,32 @@ const HomeHeader = (props) => {
     setShowModalPhim(true);
   };
   const handleOnHideModalMovie = () => {
-    // setShowModalPhim(false);
+    setShowModalPhim(false);
+  };
+
+  // ẩn hiện modal khi hover vào góc điện ảnh
+  const handleOnShowModalCornerMovie = () => {
+    setShowModalCornerMovie(true);
+  };
+  const handleOnHideModalCornerMovie = () => {
+    setShowModalCornerMovie(false);
+  };
+
+  // ẩn hiện modal khi hover vào sự kiện
+  const handleOnShowModalEvent = () => {
+    setShowModalEvent(true);
+  };
+  const handleOnHideModalEvent = () => {
+    setShowModalEvent(false);
+  };
+
+  // ẩn hiện modal khi hover vào rạp/giá vé
+  const handleOnShowModalTheaters = () => {
+    setShowModalTheaters(true);
+  };
+
+  const handleOnHideModalTheaters = () => {
+    setShowModalTheaters(false);
   };
 
   let { language, isLoggedIn } = props;
@@ -185,9 +215,27 @@ const HomeHeader = (props) => {
               >
                 Phim
               </div>
-              <div className="cinema-corner">góc điện ảnh</div>
-              <div className="event">Sự kiện</div>
-              <div className="Theaters-ticketPrices">Rạp/giá vé</div>
+              <div
+                className="cinema-corner"
+                onMouseOver={() => handleOnShowModalCornerMovie()}
+                onMouseOut={() => handleOnHideModalCornerMovie()}
+              >
+                góc điện ảnh
+              </div>
+              <div
+                className="event"
+                onMouseOver={() => handleOnShowModalEvent()}
+                onMouseOut={() => handleOnHideModalEvent()}
+              >
+                Sự kiện
+              </div>
+              <div
+                className="Theaters-ticketPrices"
+                onMouseOver={() => handleOnShowModalTheaters()}
+                onMouseOut={() => handleOnHideModalTheaters()}
+              >
+                Rạp/giá vé
+              </div>
             </div>
           </div>
 
@@ -256,6 +304,7 @@ const HomeHeader = (props) => {
           </div>
         </div>
 
+        {/* modal phim */}
         {showModalPhim && (
           <div
             className="show-modal-movie"
@@ -268,6 +317,57 @@ const HomeHeader = (props) => {
             <div className="modal-movie-fix-up-coming">
               <MovieUpcoming />
             </div>
+          </div>
+        )}
+
+        {/* modal góc điện ảnh */}
+        {showModalCornerMovie && (
+          <div
+            className="show-modal-corner-movie"
+            onMouseOver={() => handleOnShowModalCornerMovie()}
+            onMouseLeave={() => handleOnHideModalCornerMovie()}
+          >
+            <div className="modal-corner-movie-item category">
+              Thể Loại Phim
+            </div>
+            <div className="modal-corner-movie-item cast">Diễn Viên</div>
+            <div className="modal-corner-movie-item director">Đạo Diễn</div>
+            <div className="modal-corner-movie-item comment">
+              Bình Luận Phim
+            </div>
+            <div className="modal-corner-movie-item blog-movie">
+              Blog Điện Ảnh
+            </div>
+          </div>
+        )}
+
+        {/* modal sự kiện */}
+        {showModalEvent && (
+          <div
+            className="show-modal-event"
+            onMouseOver={() => handleOnShowModalEvent()}
+            onMouseLeave={() => handleOnHideModalEvent()}
+          >
+            <div className="modal-event-item">Ưu Đãi</div>
+            <div className="modal-event-item">Phim Hay Tháng</div>
+          </div>
+        )}
+
+        {/* modal rạp/giá vé */}
+        {showModalTheaters && (
+          <div
+            className="show-modal-theaters"
+            onMouseOver={() => handleOnShowModalTheaters()}
+            onMouseLeave={() => handleOnHideModalTheaters()}
+          >
+            <CustomScrollbars style={{ height: "200px" }}>
+              <div className="modal-theaters-item">Galaxy Nguyễn Du</div>
+              <div className="modal-theaters-item">Galaxy Tân Bình</div>
+              <div className="modal-theaters-item">Galaxy Quang Trung</div>
+              <div className="modal-theaters-item">Galaxy Huế</div>
+              <div className="modal-theaters-item">Galaxy Quảng Ngãi</div>
+              <div className="modal-theaters-item">Galaxy Quảng Bình</div>
+            </CustomScrollbars>
           </div>
         )}
       </div>

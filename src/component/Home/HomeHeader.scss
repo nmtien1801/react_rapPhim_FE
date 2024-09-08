@@ -224,12 +224,24 @@
           &:hover {
             color: rgb(242 107 56);
           }
+
+          &::after {
+            padding-left: 5px;
+            font-family: "FontAwesome";
+            content: "\f107"; /* mũi tên quay xuống hover sẽ xổ ra như option*/
+          }
         }
         .cinema-corner {
           cursor: pointer;
           padding-bottom: 20px;
           &:hover {
             color: rgb(242 107 56);
+          }
+
+          &::after {
+            padding-left: 5px;
+            font-family: "FontAwesome";
+            content: "\f107"; /* mũi tên quay xuống hover sẽ xổ ra như option*/
           }
         }
         .event {
@@ -238,12 +250,24 @@
           &:hover {
             color: rgb(242 107 56);
           }
+
+          &::after {
+            padding-left: 5px;
+            font-family: "FontAwesome";
+            content: "\f107"; /* mũi tên quay xuống hover sẽ xổ ra như option*/
+          }
         }
         .Theaters-ticketPrices {
           cursor: pointer;
           padding-bottom: 20px;
           &:hover {
             color: rgb(242 107 56);
+          }
+
+          &::after {
+            padding-left: 5px;
+            font-family: "FontAwesome";
+            content: "\f107"; /* mũi tên quay xuống hover sẽ xổ ra như option*/
           }
         }
       }
@@ -346,36 +370,144 @@
     width: 800px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+    padding-top: 30px;
 
     .modal-movie-fix-is-show {
-      .customize-img-slider {
-        .bg-img {
-          max-width: 110px;
+      .session {
+        padding: 0 80px !important;
+
+        .customize-img-slider {
+          .bg-img {
+            max-width: 110px;
+          }
+
+          .name-movie {
+            font-size: 14px;
+          }
         }
 
-        .name-movie {
-          font-size: 14px;
+        .option-movie {
+          display: none !important;
         }
-      }
-
-      .option-movie {
-        display: none !important;
       }
     }
 
     .modal-movie-fix-up-coming {
-      .customize-img-slider {
-        .bg-img {
-          max-width: 110px;
+      .session {
+        padding: 0 80px !important;
+
+        .customize-img-slider {
+          .bg-img {
+            max-width: 110px;
+          }
+
+          .name-movie {
+            font-size: 14px;
+          }
         }
 
-        .name-movie {
-          font-size: 14px;
+        .option-movie {
+          display: none !important;
         }
       }
+    }
+  }
 
-      .option-movie {
-        display: none !important;
+  .show-modal-corner-movie {
+    position: absolute;
+    z-index: 100;
+    top: 160px;
+    left: 68%;
+    width: 180px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+
+    .modal-corner-movie-item {
+      position: relative;
+      padding: 8px 10px;
+      left: -3px;
+      &:hover {
+        color: rgb(242 107 56);
+        background-color: rgb(247, 182, 158);
+        cursor: pointer;
+        transition: transform 0.5s ease; /* Tạo hiệu ứng chuyển đổi mượt mà */
+        transform: translateX(2px); /* Di chuyển sang phải 10px khi hover */
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0px;
+          width: 4px; /* Độ dài thanh gạch chân */
+          height: 40px; /* Độ dày thanh gạch chân */
+          background-color: rgb(242 107 56); /* Màu sắc của thanh gạch chân */
+        }
+      }
+    }
+  }
+
+  .show-modal-event {
+    position: absolute;
+    z-index: 100;
+    top: 160px;
+    left: 76%;
+    width: 180px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+
+    .modal-event-item {
+      position: relative;
+      padding: 8px 10px;
+      left: -2px;
+      &:hover {
+        color: rgb(242 107 56);
+        background-color: rgb(247, 182, 158);
+        cursor: pointer;
+        transition: transform 0.5s ease; /* Tạo hiệu ứng chuyển đổi mượt mà */
+        transform: translateX(2px); /* Di chuyển sang phải 10px khi hover */
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0px;
+          width: 4px; /* Độ dài thanh gạch chân */
+          height: 40px; /* Độ dày thanh gạch chân */
+          background-color: rgb(242 107 56); /* Màu sắc của thanh gạch chân */
+        }
+      }
+    }
+  }
+
+  .show-modal-theaters {
+    position: absolute;
+    z-index: 100;
+    top: 160px;
+    left: 85%;
+    width: 180px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+
+    .modal-theaters-item {
+      position: relative;
+      padding: 8px 10px;
+      left: -2px;
+      &:hover {
+        color: rgb(242 107 56);
+        background-color: rgb(247, 182, 158);
+        cursor: pointer;
+        transition: transform 0.5s ease; /* Tạo hiệu ứng chuyển đổi mượt mà */
+        transform: translateX(2px); /* Di chuyển sang phải 10px khi hover */
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0px;
+          width: 4px; /* Độ dài thanh gạch chân */
+          height: 40px; /* Độ dày thanh gạch chân */
+          background-color: rgb(242 107 56); /* Màu sắc của thanh gạch chân */
+        }
       }
     }
   }
@@ -383,7 +515,7 @@
   // ghi đè lên css của slick
   .slick-prev {
     // position: relative !important;
-    left: -18px !important;
+    left: -10px !important;
     z-index: 100;
     height: 48px !important;
     width: 44px !important;
@@ -403,7 +535,7 @@
 
   .slick-next {
     right: -15px !important;
-    z-index: 100;
+    z-index: 10;
     height: 48px !important;
     width: 44px !important;
     background: red !important;

@@ -19,34 +19,40 @@ import DatVe from "./component/Movie/DatVe";
 import { connect } from "react-redux";
 import { path } from "./utils/constants";
 import ChooseMovie from "./component/Movie/procedureBooking/ChooseMovie";
+import CustomScrollbars from "./setup/CustomScrollbars";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path={path.HOME} exact element={<Home />} />
-          <Route path={path.LOGIN} element={<Login />} />
-          <Route path={path.REGISTER} element={<Register />} />
+    <>
+      {/* khi thẻ div bị over flow thì sẽ xuất hiện thanh cuộn */}
+      <div className="App">
+        <CustomScrollbars style={{ height: "100vh" }}>
+          <BrowserRouter>
+            <Routes>
+              <Route path={path.HOME} exact element={<Home />} />
+              <Route path={path.LOGIN} element={<Login />} />
+              <Route path={path.REGISTER} element={<Register />} />
 
-          <Route path={path.DAT_VE} element={<DatVe />} />
-          <Route path={path.BOOKING} element={<ChooseMovie />} />
-        </Routes>
+              <Route path={path.DAT_VE} element={<DatVe />} />
+              <Route path={path.BOOKING} element={<ChooseMovie />} />
+            </Routes>
+          </BrowserRouter>
+        </CustomScrollbars>
+      </div>
 
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
-      </BrowserRouter>
-    </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+    </>
   );
 }
 
