@@ -22,6 +22,9 @@ import ChooseMovie from "./component/Movie/procedureBooking/ChooseMovie";
 import CustomScrollbars from "./setup/CustomScrollbars";
 import SeeMore_reviewMovie from "./component/Home/HomeContent/Cinema_Corner/SeeMore_reviewMovie";
 import SeeMore_Blog from "./component/Home/HomeContent/Cinema_Corner/SeeMore_Blog";
+import CategoryMovie from "./component/Movie/categoryMovie/CategoryMovie";
+import ActorMovie from "./component/Movie/actorMovie/ActorMovie";
+import DirectorMovie from "./component/Movie/directorMovie/DirectorMovie";
 
 function App() {
   return (
@@ -42,6 +45,9 @@ function App() {
                 element={<SeeMore_reviewMovie />}
               />
               <Route path={path.Blog_movie} element={<SeeMore_Blog />} />
+              <Route path={path.Category_Movie} element={<CategoryMovie />} />
+              <Route path={path.Actor_Movie} element={<ActorMovie />} />
+              <Route path={path.Director_Movie} element={<DirectorMovie />} />
             </Routes>
           </BrowserRouter>
         </CustomScrollbars>

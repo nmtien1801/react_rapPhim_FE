@@ -327,11 +327,24 @@ const HomeHeader = (props) => {
             onMouseOver={() => handleOnShowModalCornerMovie()}
             onMouseLeave={() => handleOnHideModalCornerMovie()}
           >
-            <div className="modal-corner-movie-item category">
+            <div
+              className="modal-corner-movie-item category"
+              onClick={() => history("/category-movie")}
+            >
               Thể Loại Phim
             </div>
-            <div className="modal-corner-movie-item cast">Diễn Viên</div>
-            <div className="modal-corner-movie-item director">Đạo Diễn</div>
+            <div
+              className="modal-corner-movie-item cast"
+              onClick={() => history("/actor-movie")}
+            >
+              Diễn Viên
+            </div>
+            <div
+              className="modal-corner-movie-item director"
+              onClick={() => history("/director-movie")}
+            >
+              Đạo Diễn
+            </div>
             <div
               className="modal-corner-movie-item comment"
               onClick={() => history("/review-all-movie")}
