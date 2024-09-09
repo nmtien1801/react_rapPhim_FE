@@ -20,6 +20,8 @@ import { connect } from "react-redux";
 import { path } from "./utils/constants";
 import ChooseMovie from "./component/Movie/procedureBooking/ChooseMovie";
 import CustomScrollbars from "./setup/CustomScrollbars";
+import SeeMore_reviewMovie from "./component/Home/HomeContent/Cinema_Corner/SeeMore_reviewMovie";
+import SeeMore_Blog from "./component/Home/HomeContent/Cinema_Corner/SeeMore_Blog";
 
 function App() {
   return (
@@ -35,6 +37,11 @@ function App() {
 
               <Route path={path.DAT_VE} element={<DatVe />} />
               <Route path={path.BOOKING} element={<ChooseMovie />} />
+              <Route
+                path={path.Review_Movie}
+                element={<SeeMore_reviewMovie />}
+              />
+              <Route path={path.Blog_movie} element={<SeeMore_Blog />} />
             </Routes>
           </BrowserRouter>
         </CustomScrollbars>

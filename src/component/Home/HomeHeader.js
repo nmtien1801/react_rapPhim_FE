@@ -332,10 +332,16 @@ const HomeHeader = (props) => {
             </div>
             <div className="modal-corner-movie-item cast">Diễn Viên</div>
             <div className="modal-corner-movie-item director">Đạo Diễn</div>
-            <div className="modal-corner-movie-item comment">
+            <div
+              className="modal-corner-movie-item comment"
+              onClick={() => history("/review-all-movie")}
+            >
               Bình Luận Phim
             </div>
-            <div className="modal-corner-movie-item blog-movie">
+            <div
+              className="modal-corner-movie-item blog-movie"
+              onClick={() => history("/blog-all-movie")}
+            >
               Blog Điện Ảnh
             </div>
           </div>

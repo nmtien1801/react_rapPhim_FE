@@ -22,6 +22,14 @@ const Cinema_Corner = (props) => {
     setIsReview(false);
   };
 
+  const handleSeeMore = () => {
+    if (isReview) {
+      history("/review-all-movie");
+    } else {
+      history("/blog-all-movie");
+    }
+  };
+
   return (
     <div className="cinema-corner-container">
       <div className="title-corner-cinema">
@@ -69,7 +77,9 @@ const Cinema_Corner = (props) => {
         )}
       </div>
 
-      <button className="btn see-more">Xem thêm</button>
+      <button className="btn see-more" onClick={() => handleSeeMore()}>
+        Xem thêm
+      </button>
     </div>
   );
 };
