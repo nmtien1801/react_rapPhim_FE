@@ -20,4 +20,6 @@ export const path = {
   Category_Movie: "/category-movie",
   Actor_Movie: "/actor-movie",
   Director_Movie: "/director-movie",
+  Promotion: "/promotion",
+  Theater: "/rap-galaxy-Nguyen-du",
 };

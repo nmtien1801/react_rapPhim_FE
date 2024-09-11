@@ -50,8 +50,10 @@ select.form-control {
           margin-bottom: 20px;
 
           .img-see-more {
-            width: 255px;
-            height: 170px;
+            // response image
+            width: 100%;
+            max-width: 255px;
+            padding-top: 13.66%;
             border-radius: 5px;
             // image
             // background-image: url("../../../../../public/movie/km-m-1.webp");
@@ -77,6 +79,13 @@ select.form-control {
               font-size: 14px;
               font-weight: 400;
               color: rgb(152, 147, 147);
+            }
+          }
+
+          // ẩn khi thu nhỏ màn hình
+          @media (max-width: 768px) {
+            .content-see-more {
+              display: none;
             }
           }
         }

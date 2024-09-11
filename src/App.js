@@ -25,6 +25,8 @@ import SeeMore_Blog from "./component/Home/HomeContent/Cinema_Corner/SeeMore_Blo
 import CategoryMovie from "./component/Movie/categoryMovie/CategoryMovie";
 import ActorMovie from "./component/Movie/actorMovie/ActorMovie";
 import DirectorMovie from "./component/Movie/directorMovie/DirectorMovie";
+import Promotion from "./component/Movie/promotion/Promotion";
+import Theater from "./component/Movie/theater/Theater";
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
               <Route path={path.Category_Movie} element={<CategoryMovie />} />
               <Route path={path.Actor_Movie} element={<ActorMovie />} />
               <Route path={path.Director_Movie} element={<DirectorMovie />} />
+              <Route path={path.Promotion} element={<Promotion />} />
+              <Route path={path.Theater} element={<Theater />} />
             </Routes>
           </BrowserRouter>
         </CustomScrollbars>

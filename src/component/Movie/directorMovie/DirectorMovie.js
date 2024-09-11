@@ -18,7 +18,7 @@ const DirectorMovie = (props) => {
   const contentSeeMore = [
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-2.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/DaoDien.jpg",
       title: "James Wan",
       content:
         "Khi Hollywood vẫn còn bị chỉ trích về nạn phân biệt chủng tộc, khi những tài năng da màu đều phải chật vật để tìm chỗ đứng, một người đàn ông đã chứng minh rằng chỉ cần có khả năng kiệt xuất thì dù ở đâu hay bất cứ vị trí nào, bạn cũng sẽ tỏa sáng. Anh ấy là James...",
@@ -26,7 +26,7 @@ const DirectorMovie = (props) => {
 
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-2.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/DaoDien.jpg",
       title: "James Wan",
       content:
         "Khi Hollywood vẫn còn bị chỉ trích về nạn phân biệt chủng tộc, khi những tài năng da màu đều phải chật vật để tìm chỗ đứng, một người đàn ông đã chứng minh rằng chỉ cần có khả năng kiệt xuất thì dù ở đâu hay bất cứ vị trí nào, bạn cũng sẽ tỏa sáng. Anh ấy là James...",
@@ -34,7 +34,7 @@ const DirectorMovie = (props) => {
 
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-2.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/DaoDien.jpg",
       title: "James Wan",
       content:
         "Khi Hollywood vẫn còn bị chỉ trích về nạn phân biệt chủng tộc, khi những tài năng da màu đều phải chật vật để tìm chỗ đứng, một người đàn ông đã chứng minh rằng chỉ cần có khả năng kiệt xuất thì dù ở đâu hay bất cứ vị trí nào, bạn cũng sẽ tỏa sáng. Anh ấy là James...",
@@ -42,7 +42,7 @@ const DirectorMovie = (props) => {
 
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-2.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/DaoDien.jpg",
       title: "James Wan",
       content:
         "Khi Hollywood vẫn còn bị chỉ trích về nạn phân biệt chủng tộc, khi những tài năng da màu đều phải chật vật để tìm chỗ đứng, một người đàn ông đã chứng minh rằng chỉ cần có khả năng kiệt xuất thì dù ở đâu hay bất cứ vị trí nào, bạn cũng sẽ tỏa sáng. Anh ấy là James...",

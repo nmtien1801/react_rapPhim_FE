@@ -18,7 +18,7 @@ const ActorMovie = (props) => {
   const contentSeeMore = [
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-2.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/DienVien.jpg",
       title: "Chris Evans",
       content:
         "Khác với Chris Hemsworth vẫn đang loay hoay trong hình tượng vị thần sấm sét, đa số người hâm mộ vẫn nhìn nhận rõ ràng, Chris Evans và Captain America là hai con người hoàn toàn khác nhau.",
@@ -26,14 +26,14 @@ const ActorMovie = (props) => {
 
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-2.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/DienVien.jpg",
       title: "Chris Evans",
       content:
         "Khác với Chris Hemsworth vẫn đang loay hoay trong hình tượng vị thần sấm sét, đa số người hâm mộ vẫn nhìn nhận rõ ràng, Chris Evans và Captain America là hai con người hoàn toàn khác nhau.",
     },
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-2.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/DienVien.jpg",
       title: "Chris Evans",
       content:
         "Khác với Chris Hemsworth vẫn đang loay hoay trong hình tượng vị thần sấm sét, đa số người hâm mộ vẫn nhìn nhận rõ ràng, Chris Evans và Captain America là hai con người hoàn toàn khác nhau.",
@@ -41,7 +41,7 @@ const ActorMovie = (props) => {
 
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-2.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/DienVien.jpg",
       title: "Chris Evans",
       content:
         "Khác với Chris Hemsworth vẫn đang loay hoay trong hình tượng vị thần sấm sét, đa số người hâm mộ vẫn nhìn nhận rõ ràng, Chris Evans và Captain America là hai con người hoàn toàn khác nhau.",

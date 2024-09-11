@@ -367,7 +367,12 @@ const HomeHeader = (props) => {
             onMouseOver={() => handleOnShowModalEvent()}
             onMouseLeave={() => handleOnHideModalEvent()}
           >
-            <div className="modal-event-item">Ưu Đãi</div>
+            <div
+              className="modal-event-item"
+              onClick={() => history("/promotion")}
+            >
+              Ưu Đãi
+            </div>
             <div className="modal-event-item">Phim Hay Tháng</div>
           </div>
         )}
@@ -380,7 +385,12 @@ const HomeHeader = (props) => {
             onMouseLeave={() => handleOnHideModalTheaters()}
           >
             <CustomScrollbars style={{ height: "200px" }}>
-              <div className="modal-theaters-item">Galaxy Nguyễn Du</div>
+              <div
+                className="modal-theaters-item"
+                onClick={() => history(`/rap-galaxy-Nguyen-du`)}
+              >
+                Galaxy Nguyễn Du
+              </div>
               <div className="modal-theaters-item">Galaxy Tân Bình</div>
               <div className="modal-theaters-item">Galaxy Quang Trung</div>
               <div className="modal-theaters-item">Galaxy Huế</div>

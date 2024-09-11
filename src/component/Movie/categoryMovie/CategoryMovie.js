@@ -18,7 +18,7 @@ const CategoryMovie = (props) => {
   const contentSeeMore = [
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-3.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/categoryMovie.jpg",
       title: "Avengers: Endgame",
       content:
         "Cú búng tay của Thanos đã khiến toàn bộ dân số biến mất một nửa. Các siêu anh hùng đánh mất bạn bè, người thân và đánh mất cả chính mình. Bộ sáu Avengers đầu tiên tứ tán. Iron Man kẹt lại ngoài không gian, Hawkeye mất tích. Thor, Captain America, Hulk và Blac...",
@@ -26,7 +26,7 @@ const CategoryMovie = (props) => {
 
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-3.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/categoryMovie.jpg",
       title: "Avengers: Endgame",
       content:
         "Cú búng tay của Thanos đã khiến toàn bộ dân số biến mất một nửa. Các siêu anh hùng đánh mất bạn bè, người thân và đánh mất cả chính mình. Bộ sáu Avengers đầu tiên tứ tán. Iron Man kẹt lại ngoài không gian, Hawkeye mất tích. Thor, Captain America, Hulk và Blac...",
@@ -34,7 +34,7 @@ const CategoryMovie = (props) => {
 
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-3.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/categoryMovie.jpg",
       title: "Avengers: Endgame",
       content:
         "Cú búng tay của Thanos đã khiến toàn bộ dân số biến mất một nửa. Các siêu anh hùng đánh mất bạn bè, người thân và đánh mất cả chính mình. Bộ sáu Avengers đầu tiên tứ tán. Iron Man kẹt lại ngoài không gian, Hawkeye mất tích. Thor, Captain America, Hulk và Blac...",
@@ -42,7 +42,7 @@ const CategoryMovie = (props) => {
 
     {
       previewIMG:
-        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/km-m-3.webp",
+        "https://raw.githubusercontent.com/nmtien1801/react_rapPhim_FE/master/public/movie/categoryMovie.jpg",
       title: "Avengers: Endgame",
       content:
         "Cú búng tay của Thanos đã khiến toàn bộ dân số biến mất một nửa. Các siêu anh hùng đánh mất bạn bè, người thân và đánh mất cả chính mình. Bộ sáu Avengers đầu tiên tứ tán. Iron Man kẹt lại ngoài không gian, Hawkeye mất tích. Thor, Captain America, Hulk và Blac...",

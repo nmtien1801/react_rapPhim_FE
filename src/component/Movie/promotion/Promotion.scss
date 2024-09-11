@@ -1,0 +1,69 @@
+// css lại header
+.promotion-container .header {
+  .down {
+    display: none;
+  }
+}
+
+.promotion-container {
+  // ghi đè container
+  text-align: left;
+
+  .content-promotion {
+    .item-promotion {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 120px;
+      gap: 30px;
+      border: 1px solid red;
+      .left {
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          margin-bottom: 20px;
+          font-size: 16px;
+          font-weight: 500;
+
+          .title {
+            font-size: 24px;
+            font-weight: 600;
+          }
+        }
+      }
+      .right {
+        width: 100%;
+        max-width: 639px;
+        .img {
+          // response image -> vì là tỉ lệ 0x0 nên đưa max-width lên lớp cha
+          padding-top: 56.25%;
+          border-radius: 8px;
+          // image
+          background-image: url("../../../../public/movie/km-m-2.webp");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+    }
+
+    // chuyển về hàng dọc khi thu nhỏ màn hình
+    @media (max-width: 768px) {
+      .item-promotion {
+        flex-direction: column;
+        gap: 20px;
+        // đưa ảnh lên trên và nội dung xuống dưới
+        .right {
+          order: -1; /* Đặt  `.right` (img) lên trước `.left` (content) */
+        }
+
+        .left {
+          .btn-promotion {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

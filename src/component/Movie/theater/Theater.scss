@@ -1,0 +1,68 @@
+.choose-show-time {
+  //ghi đè container
+  // text-align: left;
+  background-color: white;
+  padding: 10px;
+  margin: 20px 120px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 30px;
+  }
+
+  .show-time {
+    .option-schedule {
+      .schedule {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding-bottom: 20px;
+
+        div {
+          width: 100%;
+          max-width: 90px;
+          text-align: center;
+          border-radius: 5px;
+          &:hover {
+            cursor: pointer;
+          }
+
+          &.active {
+            background-color: rgb(3 78 162);
+            color: white;
+          }
+        }
+      }
+    }
+
+    .content-schedule {
+      padding: 30px 30px;
+      border-top: 3px solid rgb(69, 69, 243);
+
+      .list-img {
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap; // tự động xuống dòng khi không đủ chỗ
+        gap: 30px; /* Tạo khoảng cách giữa các phần tử */
+
+        .img {
+          // response image
+          width: 100%;
+          max-width: 176px;
+          padding-top: 20.5%;
+          border-radius: 5px;
+          cursor: pointer;
+
+          // image
+          background-image: url("../../../../public/movie/handsome-guys-min.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+    }
+  }
+}
